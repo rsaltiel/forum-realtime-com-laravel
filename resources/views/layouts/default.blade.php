@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Document</title>
+    <title>Instituto Sustentabilidade - Learning Community</title>
+    <link rel="stylesheet" href="/css/app.css"></link>
 </head>
 <body>
     <header>   
         @include('layouts.default.header')     
     </header>
     <main>
-        <section>
+        <section id="app">
             @yield('content')
         </section>
     </main>

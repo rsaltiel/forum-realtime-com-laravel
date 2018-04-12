@@ -1,6 +1,40 @@
 webpackJsonp([3],{
 
-/***/ 4:
+/***/ 48:
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(49);
+
+
+/***/ }),
+
+/***/ 49:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes Vue and other libraries. It is a great starting point when
+ * building robust, powerful web applications using Vue and Laravel.
+ */
+
+window.Vue = __webpack_require__(4);
+
+/**
+ * Next, we will create a fresh Vue application instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
+
+Vue.component('replies', __webpack_require__(70));
+
+var app = new Vue({
+  el: '#app'
+});
+
+/***/ }),
+
+/***/ 5:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -110,49 +144,15 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 45:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(46);
-
-
-/***/ }),
-
-/***/ 46:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
-window.Vue = __webpack_require__(3);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-Vue.component('example-component', __webpack_require__(47));
-
-var app = new Vue({
-  el: '#app'
-});
-
-/***/ }),
-
-/***/ 47:
+/***/ 70:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(4)
+var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(48)
+var __vue_script__ = __webpack_require__(71)
 /* template */
-var __vue_template__ = __webpack_require__(49)
+var __vue_template__ = __webpack_require__(72)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -169,7 +169,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\replies\\components\\ExampleComponent.vue"
+Component.options.__file = "resources\\assets\\js\\replies\\components\\Replies.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -178,9 +178,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-f9a37654", Component.options)
+    hotAPI.createRecord("data-v-9f355396", Component.options)
   } else {
-    hotAPI.reload("data-v-f9a37654", Component.options)
+    hotAPI.reload("data-v-9f355396", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -192,7 +192,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 48:
+/***/ 71:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -213,57 +213,120 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    mounted: function mounted() {
-        console.log('Component mounted.');
-    }
+    props: ['replied', 'reply', 'yourAnswer', 'send']
 });
 
 /***/ }),
 
-/***/ 49:
+/***/ 72:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card card-default" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
+  return _c("div", [
+    _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "card-content" }, [
+        _c("span", { staticClass: "card-tile" }, [
+          _vm._v("Rafael " + _vm._s(_vm.replied))
+        ]),
+        _vm._v(" "),
+        _c("blockquote", [
+          _vm._v(
+            "\n                Natus eum itaque rerum soluta. Debitis sit consequuntur doloremque recusandae. Maiores modi excepturi quos omnis. Velit ut reiciendis debitis perferendis consequatur omnis. Id magnam dolorem totam incidunt consequatur. Ut sed voluptatum beatae error. Dolorum ut corporis velit quo. Velit dicta iste quam et. Architecto aut aperiam molestiae voluptas tenetur. Facilis laboriosam libero sed magnam omnis voluptatem. Sit quaerat vero suscipit fugiat.\n            "
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "card-content" }, [
+        _c("span", { staticClass: "card-tile" }, [
+          _vm._v("Rafael " + _vm._s(_vm.replied))
+        ]),
+        _vm._v(" "),
+        _c("blockquote", [
+          _vm._v(
+            "\n                Natus eum itaque rerum soluta. Debitis sit consequuntur doloremque recusandae. Maiores modi excepturi quos omnis. Velit ut reiciendis debitis perferendis consequatur omnis. Id magnam dolorem totam incidunt consequatur. Ut sed voluptatum beatae error. Dolorum ut corporis velit quo. Velit dicta iste quam et. Architecto aut aperiam molestiae voluptas tenetur. Facilis laboriosam libero sed magnam omnis voluptatem. Sit quaerat vero suscipit fugiat.\n            "
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "card" }, [
+      _c("div", { staticClass: "card-content" }, [
+        _c("span", { staticClass: "card-tile" }, [
+          _vm._v("Rafael " + _vm._s(_vm.replied))
+        ]),
+        _vm._v(" "),
+        _c("blockquote", [
+          _vm._v(
+            "\n                Natus eum itaque rerum soluta. Debitis sit consequuntur doloremque recusandae. Maiores modi excepturi quos omnis. Velit ut reiciendis debitis perferendis consequatur omnis. Id magnam dolorem totam incidunt consequatur. Ut sed voluptatum beatae error. Dolorum ut corporis velit quo. Velit dicta iste quam et. Architecto aut aperiam molestiae voluptas tenetur. Facilis laboriosam libero sed magnam omnis voluptatem. Sit quaerat vero suscipit fugiat.\n            "
+          )
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c("div", { staticClass: "card grey lighten-4" }, [
+      _c("div", { staticClass: "card-content" }, [
+        _c("span", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.reply))]),
+        _vm._v(" "),
+        _c("form", [
+          _c("div", { staticClass: "input-field" }, [
+            _c("textarea", {
+              staticClass: "materialize-textarea",
+              attrs: { rows: "10", placeholder: _vm.yourAnswer }
+            })
+          ]),
+          _vm._v(" "),
+          _c(
+            "button",
+            { staticClass: "btn red accent-2", attrs: { type: "submit" } },
+            [_vm._v(_vm._s(_vm.send))]
+          )
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-f9a37654", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-9f355396", module.exports)
   }
 }
 
 /***/ })
 
-},[45]);
+},[48]);

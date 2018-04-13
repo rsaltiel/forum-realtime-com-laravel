@@ -157,7 +157,7 @@ var render = function() {
             _vm._v(" "),
             _c("td", [
               _c("a", { attrs: { href: "/threads/1" } }, [
-                _vm._v(_vm._s(_vm.oepn))
+                _vm._v(_vm._s(_vm.open))
               ])
             ])
           ])

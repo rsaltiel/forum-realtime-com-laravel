@@ -17,7 +17,7 @@
                         <td>Tópico que será cadastrado</td>
                         <td>3</td>
                         <td>
-                            <a href="/threads/1">{{ oepn }}</a>
+                            <a href="/threads/1">{{ open }}</a>
                         </td>
                     </tr>
                 </tbody>

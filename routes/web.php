@@ -25,4 +25,17 @@ Route::get('/locale/{locale}', function ($locale) {
     return back();
 });
 
+Route::middleware(['auth'])
+    ->group(function(){
+        // Show threads in home
+        Route::get('/threads', 'ThreadsController@index');
+        Route::post('/threads', 'ThreadsController@store');
+        Route::put('/threads/{thread}', 'ThreadsController@update');
+        Route::get('/threads/{thread}/edit', function (\App\Thread $thread){
+            return view('threads.edit', compact('thread'));
+        });
+});
 
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

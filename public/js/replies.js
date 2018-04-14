@@ -26,7 +26,7 @@ window.Vue = __webpack_require__(4);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('replies', __webpack_require__(70));
+Vue.component('replies', __webpack_require__(50));
 
 var app = new Vue({
   el: '#app'
@@ -144,15 +144,15 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 70:
+/***/ 50:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(5)
 /* script */
-var __vue_script__ = __webpack_require__(71)
+var __vue_script__ = __webpack_require__(51)
 /* template */
-var __vue_template__ = __webpack_require__(72)
+var __vue_template__ = __webpack_require__(52)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -192,7 +192,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 71:
+/***/ 51:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -245,7 +245,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 72:
+/***/ 52:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

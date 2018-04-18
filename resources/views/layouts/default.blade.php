@@ -17,6 +17,10 @@
             @yield('content')
         </section>
     </main>
+
+    <div id="loader">
+        <loader></loader>
+    </div>
     
     @include('layouts.default.footer')    
 

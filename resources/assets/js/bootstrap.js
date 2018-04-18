@@ -45,13 +45,57 @@ if (token) {
  * allows your team to easily build robust real-time web applications.
  */
 
-// import Echo from 'laravel-echo'
+import Echo from 'laravel-echo'
 
-// window.Pusher = require('pusher-js');
+window.Pusher = require('pusher-js');
 
-// window.Echo = new Echo({
-//     broadcaster: 'pusher',
-//     key: process.env.MIX_PUSHER_APP_KEY,
-//     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
-//     encrypted: true
-// });
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: '0883f19c11fb7cbecb2c',
+    cluster: 'us2',
+    encrypted: false
+});
+
+import swal from 'sweetalert2'
+
+const successCallback = (response) => {
+    return response;
+}
+
+const errorCallback = (error) => {
+    if (error.response.status == 401) {
+        swal({
+            title: 'Autenticação',
+            text: 'Para acessar este recurso você precisa estar autenticado! Você será redirecionado!',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Ok!',
+            cancelButtonText: 'Não, obrigado'
+        }).then((result) => {
+            if (result.value) {
+                window.location = '/login';
+            }
+        })
+    } else {
+        swal({
+            title: 'Error',
+            text: 'Algo deu errado e não pude resolver, me desculpe.',
+            type: 'error',
+            showCancelButton: false,
+            confirmButtonText: 'Ok!'
+        })
+    }
+
+    return Promise.reject(error);
+}
+
+window.axios.interceptors.response.use(successCallback, errorCallback);
+
+window.Vue = require('vue');
+
+Vue.component('loader', require('./commons/AxiosLoader.vue'));
+
+const commonApps = new Vue({
+    el: '#loader'
+})
+

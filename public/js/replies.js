@@ -1,6 +1,6 @@
 webpackJsonp([3],{
 
-/***/ 5:
+/***/ 2:
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -110,15 +110,15 @@ module.exports = function normalizeComponent (
 
 /***/ }),
 
-/***/ 50:
+/***/ 59:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(51);
+module.exports = __webpack_require__(60);
 
 
 /***/ }),
 
-/***/ 51:
+/***/ 60:
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -136,7 +136,7 @@ window.Vue = __webpack_require__(4);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('replies', __webpack_require__(52));
+Vue.component('replies', __webpack_require__(61));
 
 var app = new Vue({
   el: '#app'
@@ -144,15 +144,15 @@ var app = new Vue({
 
 /***/ }),
 
-/***/ 52:
+/***/ 61:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(5)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(53)
+var __vue_script__ = __webpack_require__(62)
 /* template */
-var __vue_template__ = __webpack_require__(54)
+var __vue_template__ = __webpack_require__(63)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -192,11 +192,14 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 53:
+/***/ 62:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
 //
 //
 //
@@ -229,6 +232,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     data: function data() {
         return {
             replies: [],
+            logged: window.user || {},
             thread_id: this.threadId,
             reply_to_save: {
                 body: '',
@@ -268,7 +272,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
-/***/ 54:
+/***/ 63:
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -279,19 +283,34 @@ var render = function() {
     "div",
     [
       _vm._l(_vm.replies, function(data) {
-        return _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-content" }, [
-            _c("span", { staticClass: "card-tile" }, [
-              _vm._v(_vm._s(data.user.name) + " " + _vm._s(_vm.replied))
+        return _c(
+          "div",
+          {
+            staticClass: "card",
+            class: { "lime lighten-4": data.highlighted }
+          },
+          [
+            _c("div", { staticClass: "card-content" }, [
+              _c("span", { staticClass: "card-tile" }, [
+                _vm._v(_vm._s(data.user.name) + " " + _vm._s(_vm.replied))
+              ]),
+              _vm._v(" "),
+              _c("blockquote", [
+                _vm._v(
+                  "\n                " + _vm._s(data.body) + "\n            "
+                )
+              ])
             ]),
             _vm._v(" "),
-            _c("blockquote", [
-              _vm._v(
-                "\n                " + _vm._s(data.body) + "\n            "
-              )
-            ])
-          ])
-        ])
+            _vm.logged.role === "admin"
+              ? _c("div", { staticClass: "card-action" }, [
+                  _c("a", { attrs: { href: "/reply/highligth/" + data.id } }, [
+                    _vm._v("em destaque")
+                  ])
+                ])
+              : _vm._e()
+          ]
+        )
       }),
       _vm._v(" "),
       _c("div", { staticClass: "card grey lighten-4" }, [
@@ -360,4 +379,4 @@ if (false) {
 
 /***/ })
 
-},[50]);
+},[59]);

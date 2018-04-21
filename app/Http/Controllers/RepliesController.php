@@ -16,6 +16,26 @@ class RepliesController extends Controller
         return $replies;
     }
 
+    public function highlight($id)
+    {
+       
+        $reply = Reply::find($id);
+         // Usando policy para garantir que só o admin possa editar
+        $this->authorize('update', $reply);
+
+        Reply::where([
+            ['id', '!=', $id],
+            ['thread_id', '=', $reply->thread_id],
+        ])
+        ->update([
+            'highlighted' => false
+        ]);
+        $reply->highlighted = true;
+        $reply->save();
+
+        return redirect('threads/' . $reply->thread_id );
+    }
+
     public function store(ReplyRequest $request)
     {
         $reply = new Reply;

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateRepliesTable extends Migration
+class CreateSocialAuthsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateRepliesTable extends Migration
      */
     public function up()
     {
-        Schema::create('replies', function (Blueprint $table) {
+        Schema::create('social_auths', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('body');
-            $table->boolean('highlighted')->default(false);
-            $table->integer('thread_id')->unsigned();
+            $table->string('provider');
+            $table->string('social_is');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('thread_id')->references('id')->on('threads');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -33,6 +32,6 @@ class CreateRepliesTable extends Migration
     public function down()
     {
         Schema::disableForeignKeyConstraints();
-        Schema::dropIfExists('replies');
+        Schema::dropIfExists('social_auths');
     }
 }

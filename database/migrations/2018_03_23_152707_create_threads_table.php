@@ -17,6 +17,8 @@ class CreateThreadsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->text('body');
+            $table->boolean('fixed')->default(false);
+            $table->integer('replies_count')->default(0); 
             $table->integer('user_id')->unsigned(); // Aceita apenas valores positivos. Como nao aceita valores negativos, passa a aceitar o dobro de possibilidades, pois o Int vai de numeros negativos a positivos: ex -1000 a +1000
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');            

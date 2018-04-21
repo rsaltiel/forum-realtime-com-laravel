@@ -79,7 +79,7 @@ const errorCallback = (error) => {
     } else {
         swal({
             title: 'Error',
-            text: 'Algo deu errado e não pude resolver, me desculpe.',
+            text: 'Algo deu errado e não foi possível completar sua solicitação.',
             type: 'error',
             showCancelButton: false,
             confirmButtonText: 'Ok!'

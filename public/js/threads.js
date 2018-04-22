@@ -241,12 +241,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['title', 'threads', 'replies', 'open', 'newThread', 'threadTitle', 'threadBody', 'send'],
     data: function data() {
         return {
             threads_response: [],
+            logged: window.user || {},
             threads_to_save: {
                 title: '',
                 body: ''
@@ -312,7 +315,7 @@ var render = function() {
         _c(
           "tbody",
           _vm._l(_vm.threads_response.data, function(thread) {
-            return _c("tr", [
+            return _c("tr", { class: { "lime lighten-4": thread.fixed } }, [
               _c("td", [_vm._v(_vm._s(thread.id))]),
               _vm._v(" "),
               _c("td", [_vm._v(_vm._s(thread.title))]),
@@ -320,9 +323,36 @@ var render = function() {
               _c("td", [_vm._v(_vm._s(thread.replies_count || 0))]),
               _vm._v(" "),
               _c("td", [
-                _c("a", { attrs: { href: "/threads/" + thread.id } }, [
-                  _vm._v(_vm._s(_vm.open))
-                ])
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn",
+                    attrs: { href: "/threads/" + thread.id }
+                  },
+                  [_vm._v(_vm._s(_vm.open))]
+                ),
+                _vm._v(" "),
+                _vm.logged.role === "admin"
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "btn",
+                        attrs: { href: "/thread/pin/" + thread.id }
+                      },
+                      [_vm._v("Fixar")]
+                    )
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.logged.role === "admin"
+                  ? _c(
+                      "a",
+                      {
+                        staticClass: "btn",
+                        attrs: { href: "/thread/close/" + thread.id }
+                      },
+                      [_vm._v("Fechar")]
+                    )
+                  : _vm._e()
               ])
             ])
           })

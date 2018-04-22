@@ -42,6 +42,11 @@ Route::middleware(['auth'])
         });
 
         Route::get('/reply/highligth/{id}', 'RepliesController@highlight');
+        Route::get('/thread/pin/{thread}', 'ThreadsController@pin');
+        Route::get('/thread/close/{thread}', 'ThreadsController@close');
+
+        Route::get('/profile', 'ProfileController@edit');
+        Route::post('/profile', 'ProfileController@update');
 
         Route::post('/replies', 'RepliesController@store');
 });

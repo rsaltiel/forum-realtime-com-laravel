@@ -14,4 +14,9 @@ class ReplyPolicy
     {
         return $user->role === 'admin';
     }
+
+    public function isClosed(User $user, Reply $reply)
+    {
+        return !$reply->thread->closed;
+    }
 }
